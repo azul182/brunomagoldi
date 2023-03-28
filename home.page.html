@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      App de Logística
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+
+    <ion-item>
+      <ion-label position="floating">Peso do produto</ion-label>
+      <ion-input [(ngModel)]="kg"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Distância</ion-label>
+      <ion-input [(ngModel)]="km"></ion-input>
+
+    </ion-item>
+<br>
+<h1>  Tipo de envio</h1>
+    <ion-list>
+      <ion-radio-group [(ngModel)]="radioSelecionada">
+        <ion-item>
+          <ion-label>Regular - 10 dias úteis</ion-label>
+          <ion-radio slot="end" value="Regular"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Expresso - 5 dias úteis</ion-label>
+          <ion-radio slot="end" value="expresso"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Agendado - 1 dia útil</ion-label>
+          <ion-radio slot="end" value="agendar"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+
+      <p>  Vendas com mais de 100Kg ou com menos de 100km recebem 20% de desconto!</p>
+
+      <ion-grid [fixed]="true">
+        <ion-row>
+          <ion-col>Peso(KG)</ion-col>
+          <ion-col>Distância(KM)</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>0.5</ion-col>
+          <ion-col>0.4</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-list>
+  </ion-list>
+  <ion-button (click)="VerificarRadio()">Verificar peso ideal</ion-button>
+</ion-content>
